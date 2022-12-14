@@ -1686,9 +1686,9 @@ MonoBehaviour:
   phase_2: {fileID: 1112806211}
   phase_3: {fileID: 1789085973}
   phase_4: {fileID: 1510129737}
-  A1: {fileID: 0}
-  A2: {fileID: 0}
-  BgImage: {fileID: 0}
+  A1: {fileID: -1595094644, guid: fe04e1966a96f2344b23e83797a4b5f9, type: 3}
+  A2: {fileID: -1225014009, guid: 0fbd831de1878ca4e83fdd381ecafc94, type: 3}
+  BgImage: {fileID: 1759730986}
 --- !u!4 &239633444
 Transform:
   m_ObjectHideFlags: 0
@@ -16897,7 +16897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2452114810245818852
 RectTransform:
   m_ObjectHideFlags: 0
