@@ -73,6 +73,7 @@ public class Question : MonoBehaviour
         popoUPs.SetTrigger("Do");
         popUpText.text = "Wrong Answer!";
         questionCount++;
+        SetImageBG();
         _audioSource.clip = wrong;
         _audioSource.Play();
         if (questionCount == 2)
@@ -90,6 +91,7 @@ public class Question : MonoBehaviour
         popoUPs.SetTrigger("Do");
         popUpText.text = "Correct Answer!";
         questionCount++;
+        SetImageBG();
         _audioSource.clip = Right;
         _audioSource.Play();
         if (questionCount == 2)
@@ -135,21 +137,34 @@ public class Question : MonoBehaviour
     public void SetIamge()
     {
         
-            int y = PlayerPrefs.GetInt("araby");
-            y++;
-        PlayerPrefs.SetInt("araby",y);
-        if (y % 2 == 0)
-            {
-                BgImage.sprite = A1;
+           // int y = PlayerPrefs.GetInt("araby");
+          //  y++;
+       // PlayerPrefs.SetInt("araby",y);
+       // if (y % 2 == 0)
+          //  {
+            //    BgImage.sprite = A1;
 
-            }
-            else
-            {
+           // }
+           // else
+           // {
                 BgImage.sprite = A2;
 
-            }
+           // }
 
        
+    }
+    void SetImageBG()
+    {
+        if(questionCount<=4)
+        {
+            BgImage.sprite = A1;
+        }
+       
+        else
+        {
+            BgImage.sprite = A2;
+
+        }
     }
    
     }

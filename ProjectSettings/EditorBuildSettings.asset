@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Airy UI/_Sample Scenes/Christmas.unity
+    guid: a74f4b003771cbd449357c6c9058d49a
   m_configObjects: {}
