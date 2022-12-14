@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -73,6 +74,45 @@ public class DataSave : MonoBehaviour
         }
         questions.phase_1.SetActive(false);
         questions.phase_2.SetActive(true);
+        Save(names, phone, age, gender);
     }
     public Question questions;
+
+    FileInfo f;
+    public string path;
+    void Start()
+    {
+
+        if (path == null || path == "" || path == " ")
+        {
+            path = Application.persistentDataPath + " / data.txt";
+            f = new FileInfo(Application.persistentDataPath + " / data.txt");
+        }
+        else
+        {
+            path = "D:/" + " / data.txt";
+            f = new FileInfo("D:/" + " / data.txt");
+        }
+
+    }
+
+    public void Save(string name, string phone, string email, string copm)
+    {
+        StreamWriter w;
+        if (!f.Exists)
+        {
+            w = f.CreateText();
+        }
+        else
+        {
+            w = new StreamWriter(path, true);
+        }
+        print(path);
+        w.WriteLine(name);
+        w.WriteLine(phone);
+        w.WriteLine(email);
+        w.WriteLine(copm);
+        w.WriteLine("_______>-<_______");
+        w.Close();
+    }
 }

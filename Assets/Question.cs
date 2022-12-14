@@ -128,13 +128,17 @@ public class Question : MonoBehaviour
 
     public Sprite A1, A2;
     public Image BgImage;
+    private void Start()
+    {
+        SetIamge();
+    }
     public void SetIamge()
     {
-        if (PlayerPrefs.HasKey("araby"))
-        {
+        
             int y = PlayerPrefs.GetInt("araby");
             y++;
-            if (y % 2 == 0)
+        PlayerPrefs.SetInt("araby",y);
+        if (y % 2 == 0)
             {
                 BgImage.sprite = A1;
 
@@ -145,22 +149,7 @@ public class Question : MonoBehaviour
 
             }
 
-        }
-        else
-        {
-             PlayerPrefs.SetInt("araby", 1);
-            int y = PlayerPrefs.GetInt("araby");
-            if (y % 2 == 0)
-            {
-                BgImage.sprite = A1;
-
-            }
-            else
-            {
-                BgImage.sprite = A2;
-
-            }
-        }
+       
     }
    
     }
