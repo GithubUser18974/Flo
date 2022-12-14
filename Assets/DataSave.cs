@@ -2,27 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DataSave : MonoBehaviour
 {
     public string names, phone, gender, age;
     public TMP_InputField nameInp, phoneInp, genderInp, ageInp;
+    public GameObject OnScreenKeyboard;
+    public Text T1, T2;
+    public KeyboardScript keyboard;
+    public void SetKeboard(TMP_InputField tt)
+    {
+        keyboard.TextField = tt;
+        T1.text = string.Empty;
+        T2.text = string.Empty;
+    }
     public void SetName( )
     {
         names = nameInp.text;
+        T1.text= nameInp.text;
+        T2.text= nameInp.text;
 
     }
     public void SetPhone()
     {
         phone = phoneInp.text;
+        T1.text = phoneInp.text;
+        T2.text = phoneInp.text;
     }
     public void SetGender()
     {
         gender = genderInp.text;
+        T1.text = genderInp.text;
+        T2.text = genderInp.text;
     }
     public void SetAge()
     {
         age = ageInp.text;
+        T1.text = ageInp.text;
+        T2.text = ageInp.text;
     }
     public void NextButton()
     {
