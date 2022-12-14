@@ -14,9 +14,12 @@ public class DataSave : MonoBehaviour
     public KeyboardScript keyboard;
     public void SetKeboard(TMP_InputField tt)
     {
-        keyboard.TextField = tt;
-        T1.text = string.Empty;
+            T1.text = string.Empty;
         T2.text = string.Empty;
+        keyboard.TextField = tt;
+        T1.text = tt.text;
+        T2.text = tt.text;
+
     }
     public void SetName( )
     {
@@ -74,6 +77,7 @@ public class DataSave : MonoBehaviour
         }
         questions.phase_1.SetActive(false);
         questions.phase_2.SetActive(true);
+        questions.BgImage.sprite = questions.A1;
         Save(names, phone, age, gender);
     }
     public Question questions;
