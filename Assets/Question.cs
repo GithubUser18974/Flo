@@ -15,6 +15,7 @@ public class Question : MonoBehaviour
     public GameObject[] _Q4;
     public Toggle[] _Q4T;
     public int Score = 0;
+    public GameObject uiPanel;
     public void Q1()
     {
         foreach(GameObject i in _Q1)
@@ -107,18 +108,20 @@ public class Question : MonoBehaviour
     public GameObject phase_1, phase_2, phase_3, phase_4;
     IEnumerator DisplayPhase3()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         phase_1.SetActive(false);
         phase_2.SetActive(false);
         phase_3.SetActive(true);
     }
     IEnumerator DisplayPhase4()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         phase_1.SetActive(false);
         phase_2.SetActive(false);
         phase_3.SetActive(false);
+        uiPanel.SetActive(false);
         phase_4.SetActive(true);
+
 
     }
     public void ReloadScene()

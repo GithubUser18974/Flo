@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class DataSave : MonoBehaviour
@@ -11,12 +12,12 @@ public class DataSave : MonoBehaviour
     public TMP_InputField nameInp, phoneInp, genderInp, ageInp;
     public GameObject OnScreenKeyboard;
     public Text T1, T2;
-   // public KeyboardScript keyboard;
+    public KeyboardScript keyboard;
     public void SetKeboard(TMP_InputField tt)
     {
           //  T1.text = string.Empty;
        // T2.text = string.Empty;
-       // keyboard.TextField = tt;
+        keyboard.TextField = tt;
         T1.text = tt.text;
         T2.text = tt.text;
 
@@ -61,13 +62,7 @@ public class DataSave : MonoBehaviour
 
             return;
         }
-        if (age.Length < 1)
-        {
-            questions.popUpText.text = "Enter valid Age";
-            questions.popoUPs.SetTrigger("Do");
-
-            return;
-        }
+      
         if (gender.Length < 1)
         {
             questions.popUpText.text = "Enter valid Gender";
@@ -84,22 +79,28 @@ public class DataSave : MonoBehaviour
 
     FileInfo f;
     public string path;
+    public TMP_Dropdown _Gender;
     void Start()
     {
 
         if (path == null || path == "" || path == " ")
         {
-            path = Application.persistentDataPath + " / data.txt";
-            f = new FileInfo(Application.persistentDataPath + " / data.txt");
+            path = Application.persistentDataPath + "/data.txt";
+            f = new FileInfo(Application.persistentDataPath + "/data.txt");
         }
         else
         {
-            path = "D:/" + " / data.txt";
-            f = new FileInfo("D:/" + " / data.txt");
+            path = Application.persistentDataPath + "/data.txt";
+            f = new FileInfo(path+ "/data.txt");
         }
+        _Gender.value = 0;
+        gender = _Gender.value.ToString();
 
     }
-
+    public void SetGenderDD()
+    {
+        gender = _Gender.value.ToString();
+    }
     public void Save(string name, string phone, string email, string copm)
     {
         StreamWriter w;
