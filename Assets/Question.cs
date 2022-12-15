@@ -119,12 +119,10 @@ public class Question : MonoBehaviour
         phase_2.SetActive(false);
         phase_3.SetActive(false);
         phase_4.SetActive(true);
-        StartCoroutine(ReloadScene());
 
     }
-    IEnumerator ReloadScene()
+    public void ReloadScene()
     {
-        yield return new WaitForSeconds(5);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

@@ -11,12 +11,12 @@ public class DataSave : MonoBehaviour
     public TMP_InputField nameInp, phoneInp, genderInp, ageInp;
     public GameObject OnScreenKeyboard;
     public Text T1, T2;
-    public KeyboardScript keyboard;
+   // public KeyboardScript keyboard;
     public void SetKeboard(TMP_InputField tt)
     {
-            T1.text = string.Empty;
-        T2.text = string.Empty;
-        keyboard.TextField = tt;
+          //  T1.text = string.Empty;
+       // T2.text = string.Empty;
+       // keyboard.TextField = tt;
         T1.text = tt.text;
         T2.text = tt.text;
 
